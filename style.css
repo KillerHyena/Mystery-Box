@@ -106,6 +106,48 @@ button:hover {
     transform: scale(1.1);
 }
 
+/* Image Gallery Section */
+#image-gallery {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#image-gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 30%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover; /* Ensures proper image cropping */
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
 /* Features */
 .feature-container {
     display: flex;
@@ -134,6 +176,7 @@ button:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
+
 /* Make sure the page takes up full height */
 html, body {
     height: 100%;
@@ -149,12 +192,41 @@ html, body {
 
 /* Footer styling */
 footer {
-    background: #34495e;
-    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    color: rgb(233, 180, 180);
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
+    animation: fadeInUp 1s ease-in-out;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Images */
+.footer-img {
+    width: 100%; /* Full width */
+    max-height: 100px; /* Adjust size */
+    object-fit: contain; /* Ensures the image maintains aspect ratio */
+}
+
+.footer-img.top {
+    margin-bottom: 20px; /* Space below the top image */
+}
+
+.footer-img.bottom {
+    margin-top: 20px; /* Space above the bottom image */
+}
 
 /* Subscribe */
 #subscribe input {
@@ -172,23 +244,4 @@ footer {
     border-radius: 25px;
     background: #ff6600;
     color: white;
-}
-
-/* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    animation: fadeInUp 1s ease-in-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
